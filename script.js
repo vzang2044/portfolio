@@ -258,6 +258,84 @@ class SoundEffects {
   }
 }
 
+// Audio Player cho nhạc nền
+class AudioPlayer {
+  constructor() {
+    this.audio = document.getElementById("background-audio")
+    this.toggleButton = document.getElementById("toggle-music")
+    this.isPlaying = false
+
+    this.init()
+  }
+
+  init() {
+    // Thiết lập nút bật/tắt nhạc
+    if (this.toggleButton) {
+      this.toggleButton.addEventListener("click", () => {
+        this.toggleMusic()
+      })
+    }
+
+    // Thêm sự kiện để bắt đầu phát nhạc khi có tương tác người dùng đầu tiên
+    document.addEventListener(
+      "click",
+      () => {
+        if (!this.isPlaying) {
+          this.playMusic()
+        }
+      },
+      { once: true },
+    )
+
+    // Tự động phát nhạc sau khi trang tải xong (cần tương tác người dùng trước)
+    window.addEventListener("load", () => {
+      // Chờ màn hình loading biến mất
+      setTimeout(() => {
+        // Cố gắng phát nhạc (sẽ hoạt động nếu người dùng đã tương tác với trang)
+        this.playMusic()
+      }, 3000)
+    })
+  }
+
+  playMusic() {
+    if (this.audio) {
+      const playPromise = this.audio.play()
+
+      // Xử lý lỗi nếu trình duyệt chặn tự động phát
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            this.isPlaying = true
+            this.toggleButton.classList.add("playing")
+          })
+          .catch((error) => {
+            console.log("Tự động phát bị chặn. Cần tương tác người dùng:", error)
+          })
+      }
+    }
+  }
+
+  toggleMusic() {
+    if (!this.audio) return
+
+    if (this.isPlaying) {
+      this.audio.pause()
+      this.toggleButton.classList.remove("playing")
+      this.isPlaying = false
+    } else {
+      this.audio.play()
+      this.toggleButton.classList.add("playing")
+      this.isPlaying = true
+    }
+  }
+
+  setVolume(volume) {
+    if (!this.audio) return
+    // Volume từ 0.0 đến 1.0
+    this.audio.volume = Math.max(0, Math.min(1, volume))
+  }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize all components
@@ -268,6 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingScreen = new LoadingScreen()
   const glitchEffect = new GlitchEffect()
   const soundEffects = new SoundEffects()
+  const audioPlayer = new AudioPlayer() // Khởi tạo trình phát nhạc mới
 
   // Handle window resize
   window.addEventListener("resize", () => {
@@ -332,18 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener("mousemove", updateCursor)
-})
 
-// Service Worker for offline functionality (optional)
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then((registration) => {
-        console.log("SW registered: ", registration)
-      })
-      .catch((registrationError) => {
-        console.log("SW registration failed: ", registrationError)
-      })
-  })
-}
+  // Expose audio player to window for console debugging
+  window.audioPlayer = audioPlayer
+})
