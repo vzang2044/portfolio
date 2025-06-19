@@ -21,25 +21,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home" aria-label="Home">Hansuke</a>
+                <a href="#home" aria-label="Home">
+                    <span class="logo-icon">⚡</span>
+                    Hansuke
+                </a>
             </div>
             
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link" aria-label="Go to Home section">Home</a>
+                    <a href="#home" class="nav-link" aria-label="Go to Home section">
+                        <span class="nav-icon">🏠</span>Home
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link" aria-label="Go to About section">About</a>
+                    <a href="#about" class="nav-link" aria-label="Go to About section">
+                        <span class="nav-icon">👨‍💻</span>About
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#projects" class="nav-link" aria-label="Go to Projects section">Projects</a>
+                    <a href="#projects" class="nav-link" aria-label="Go to Projects section">
+                        <span class="nav-icon">🚀</span>Projects
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link" aria-label="Go to Contact section">Contact</a>
+                    <a href="#contact" class="nav-link" aria-label="Go to Contact section">
+                        <span class="nav-icon">📧</span>Contact
+                    </a>
                 </li>
             </ul>
             
@@ -59,16 +81,44 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-bg-effects">
+            <div class="neon-grid"></div>
+            <div class="floating-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        
         <div class="hero-content">
+            <div class="hero-avatar">
+                <img src="images/vy.jpg" alt="Profile Avatar" class="avatar-img">
+                <div class="avatar-ring"></div>
+                <div class="avatar-glow"></div>
+            </div>
+            
             <h1 class="hero-title">
                 <span class="gradient-text">Creative Developer</span>
+                <div class="typing-animation">
+                    <span class="typing-text">Building Amazing Experiences</span>
+                    <span class="cursor">|</span>
+                </div>
             </h1>
             <p class="hero-description">
-                Crafting digital experiences with modern technologies and creative solutions
+                🎨 Crafting digital experiences with modern technologies and creative solutions
             </p>
-            <button class="cta-button" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth', block: 'start'})">
-                Get Started
-            </button>
+            <div class="hero-buttons">
+                <button class="cta-button primary" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                    <span>Get Started</span>
+                    <div class="button-glow"></div>
+                </button>
+                <button class="cta-button secondary" onclick="document.querySelector('#projects').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                    <span>View Work</span>
+                </button>
+            </div>
         </div>
         
         <div class="scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth', block: 'start'})">
@@ -82,24 +132,69 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="about-text">
-                Hey,uhm, i'm Sang also known as Hansuke. I'm a passionate web developer with expertise in modern technologies. 
-                I love creating innovative solutions that combine functionality with stunning design. 
-                My goal is to build digital experiences that make a difference.
-            </p>
+            <h2 class="section-title">
+                <span class="title-icon">🎯</span>
+                About Me
+            </h2>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/placeholder.svg?height=400&width=400" alt="About Me" class="about-img">
+                    <div class="image-decoration">
+                        <div class="deco-1"></div>
+                        <div class="deco-2"></div>
+                        <div class="deco-3"></div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <p class="intro-text">
+                        🚀 Hey, i'm Sang, nice to meet u xD. I'm a passionate web developer with expertise in modern technologies. 
+                        I love creating innovative solutions that combine functionality with stunning design. 
+                        My goal is to build digital experiences that make a difference.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">10 +</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="skills-grid">
                 <div class="skill-item">
+                    <div class="skill-icon">⚛️</div>
                     <h3>Frontend</h3>
                     <p>React, Vue, JavaScript, TypeScript</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="90"></div>
+                    </div>
                 </div>
                 <div class="skill-item">
+                    <div class="skill-icon">🔧</div>
                     <h3>Backend</h3>
                     <p>Node.js, Python, Express, FastAPI</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="85"></div>
+                    </div>
                 </div>
                 <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
                     <h3>Design</h3>
                     <p>UI/UX, Figma, Adobe Creative Suite</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-progress="80"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,16 +203,29 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">
+                <span class="title-icon">💼</span>
+                Featured Projects
+            </h2>
+            
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
                         <img src="/placeholder.svg?height=200&width=300" alt="E-commerce Platform" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <button class="view-btn">👁️ View</button>
+                                <button class="code-btn">💻 Code</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">E-commerce Platform</h3>
+                        <div class="project-header">
+                            <h3 class="project-title">🛒 E-commerce Platform</h3>
+                            <div class="project-status">Live</div>
+                        </div>
                         <p class="project-description">
-                            Modern e-commerce solution with React and Node.js
+                            Modern e-commerce solution with React and Node.js featuring real-time inventory and payment processing
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
@@ -130,11 +238,20 @@
                 <div class="project-card">
                     <div class="project-image">
                         <img src="/placeholder.svg?height=200&width=300" alt="Gaming Dashboard" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <button class="view-btn">👁️ View</button>
+                                <button class="code-btn">💻 Code</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Gaming Dashboard</h3>
+                        <div class="project-header">
+                            <h3 class="project-title">🎮 Gaming Dashboard</h3>
+                            <div class="project-status">Beta</div>
+                        </div>
                         <p class="project-description">
-                            Real-time gaming statistics and analytics platform
+                            Real-time gaming statistics and analytics platform with live data visualization
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Vue.js</span>
@@ -147,16 +264,103 @@
                 <div class="project-card">
                     <div class="project-image">
                         <img src="/placeholder.svg?height=200&width=300" alt="Mobile App" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <button class="view-btn">👁️ View</button>
+                                <button class="code-btn">💻 Code</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Mobile App</h3>
+                        <div class="project-header">
+                            <h3 class="project-title">📱 Mobile App</h3>
+                            <div class="project-status">Coming Soon</div>
+                        </div>
                         <p class="project-description">
-                            Cross-platform mobile application with React Native
+                            Cross-platform mobile application with React Native and Firebase integration
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">React Native</span>
                             <span class="tech-tag">Firebase</span>
                             <span class="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="AI Chatbot" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <button class="view-btn">👁️ View</button>
+                                <button class="code-btn">💻 Code</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">🤖 AI Chatbot</h3>
+                            <div class="project-status">Live</div>
+                        </div>
+                        <p class="project-description">
+                            Intelligent chatbot with natural language processing and machine learning
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Crypto Tracker" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <button class="view-btn">👁️ View</button>
+                                <button class="code-btn">💻 Code</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">💰 Crypto Tracker</h3>
+                            <div class="project-status">Live</div>
+                        </div>
+                        <p class="project-description">
+                            Real-time cryptocurrency tracking with advanced charts and portfolio management
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Social Platform" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <button class="view-btn">👁️ View</button>
+                                <button class="code-btn">💻 Code</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">🌐 Social Platform</h3>
+                            <div class="project-status">Beta</div>
+                        </div>
+                        <p class="project-description">
+                            Modern social media platform with real-time messaging and content sharing
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                     </div>
                 </div>
@@ -167,42 +371,94 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">
+                <span class="title-icon">📬</span>
+                Get In Touch
+            </h2>
             <p class="contact-description">
-                Ready to work together? Let's create something amazing!
+                🚀 Ready to work together? Let's create something amazing!
             </p>
             
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
-                    <span class="error-message" id="name-error"></span>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>vzang204@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>(+84) 946 039 187</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Ha Tinh - Viet Nam</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <span>💻</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <span>💼</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <span>🐦</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <span>📸</span>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
-                    <span class="error-message" id="email-error"></span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea id="message" name="message" class="form-textarea" rows="5" required aria-describedby="message-error"></textarea>
-                    <span class="error-message" id="message-error"></span>
-                </div>
-                
-                <button type="submit" class="submit-button">
-                    <span class="button-text">Send Message</span>
-                    <span class="button-loader" style="display: none;">Sending...</span>
-                </button>
-            </form>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="5" required aria-describedby="message-error"></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Send Message 🚀</span>
+                        <span class="button-loader" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">⚡</span>
+                    <span>Hansuke</span>
+                </div>
+                <p>&copy; 2024 Hansuke. All rights reserved. Made with 💖</p>
+            </div>
         </div>
     </footer>
 
