@@ -1,401 +1,212 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hansuke | Hacker Portfolio</title>
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💀</text></svg>">
+    <meta name="description" content="Modern web developer portfolio showcasing creative projects and skills">
+    <meta name="keywords" content="web developer, portfolio, frontend, backend, projects">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Your Name - Web Developer Portfolio">
+    <meta property="og:description" content="Modern web developer portfolio showcasing creative projects and skills">
+    <meta property="og:type" content="website">
+    
+    <title>Hansuke - Web Developer Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Matrix Background -->
-    <canvas id="matrix-canvas"></canvas>
-    
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="terminal-loader">
-            <div class="terminal-header">
-                <span class="terminal-title">INITIALIZING SYSTEM...</span>
-            </div>
-            <div class="loading-text">
-                <div class="loading-line">Loading modules...</div>
-                <div class="loading-line">Establishing connection...</div>
-                <div class="loading-line">Access granted.</div>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="cyber-nav">
-        <div class="nav-item active" data-target="home">
-            <i class="fas fa-home"></i>
-            <span>HOME</span>
-        </div>
-        <div class="nav-item" data-target="about">
-            <i class="fas fa-user-secret"></i>
-            <span>ABOUT</span>
-        </div>
-        <div class="nav-item" data-target="skills">
-            <i class="fas fa-code"></i>
-            <span>SKILLS</span>
-        </div>
-        <div class="nav-item" data-target="projects">
-            <i class="fas fa-laptop-code"></i>
-            <span>PROJECTS</span>
-        </div>
-        <div class="nav-item" data-target="contact">
-            <i class="fas fa-terminal"></i>
-            <span>CONTACT</span>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" aria-label="Home">Hansuke</a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" aria-label="Go to Home section">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" aria-label="Go to About section">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" aria-label="Go to Projects section">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" aria-label="Go to Contact section">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+                    <span class="toggle-icon">🌙</span>
+                </button>
+                
+                <div class="hamburger" id="hamburger" aria-label="Toggle mobile menu" role="button" tabindex="0">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="hero-container">
-                <div class="glitch-container">
-                    <h1 class="glitch-text" data-text="HANSUKE">HANSUKE</h1>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Creative Developer</span>
+            </h1>
+            <p class="hero-description">
+                Crafting digital experiences with modern technologies and creative solutions
+            </p>
+            <button class="cta-button" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                Get Started
+            </button>
+        </div>
+        
+        <div class="scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth', block: 'start'})">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                Hey,uhm, i'm Sang also known as Hansuke. I'm a passionate web developer with expertise in modern technologies. 
+                I love creating innovative solutions that combine functionality with stunning design. 
+                My goal is to build digital experiences that make a difference.
+            </p>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Frontend</h3>
+                    <p>React, Vue, JavaScript, TypeScript</p>
                 </div>
-                <div class="subtitle-container">
-                    <p class="typing-text">DEV_ANYTHING.exe</p>
+                <div class="skill-item">
+                    <h3>Backend</h3>
+                    <p>Node.js, Python, Express, FastAPI</p>
                 </div>
-                <div class="profile-section">
-                    <div class="profile-image-container">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/profile.jpg-pRP1jrt9l1o25Mp0naFWp58fb4A4NW.jpeg" alt="Profile" class="profile-image">
-                        <div class="scan-line"></div>
-                    </div>
-                    <div class="profile-info">
-                        <div class="terminal-window">
-                            <div class="terminal-header">
-                                <span class="terminal-title">user@hansuke:~$</span>
-                            </div>
-                            <div class="terminal-content">
-                                <div class="terminal-line">
-                                    <span class="prompt">></span>
-                                    <span class="command">whoami</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="output">Full Stack Developer</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="prompt">></span>
-                                    <span class="command">skills --list</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="output">HTML | CSS | JavaScript | Server Management</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="prompt">></span>
-                                    <span class="command">status</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="output">Ready to hack the world 🚀</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/itsvzang/" class="social-link" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/zangpeodzai/" class="social-link" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://github.com/vzang2044" class="social-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@zangpeo_04" class="social-link" target="_blank">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
+                <div class="skill-item">
+                    <h3>Design</h3>
+                    <p>UI/UX, Figma, Adobe Creative Suite</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="section-container">
-                <h2 class="section-title">
-                    <span class="bracket">[</span>
-                    ABOUT_ME
-                    <span class="bracket">]</span>
-                </h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="cyber-card">
-                            <div class="card-header">
-                                <span class="card-title">PERSONAL_INFO.txt</span>
-                            </div>
-                            <div class="card-content">
-                                <p>Bạn cũng không cần biết nhiều về tôi.</p>
-                                <br>
-                                <p>Ừ tôi cũng thiết kế một số thứ, phát triển một số project. Ít thôi nhưng tôi yêu thích những thứ tôi làm. Tôi có 1 năm kinh nghiệm quản lý server và đang học thêm về front-end development.</p>
-                                <br>
-                                <p>Mục tiêu của tôi là trở thành full-stack developer trong 2 năm tới.</p>
-                            </div>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="E-commerce Platform" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-description">
+                            Modern e-commerce solution with React and Node.js
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
                         </div>
                     </div>
-                    <div class="about-details">
-                        <div class="cyber-card">
-                            <div class="card-header">
-                                <span class="card-title">SYSTEM_INFO.json</span>
-                            </div>
-                            <div class="card-content">
-                                <div class="info-item">
-                                    <span class="info-key">Name:</span>
-                                    <span class="info-value">"Hansuke"</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-key">Location:</span>
-                                    <span class="info-value">"Hà Tĩnh, Việt Nam"</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-key">Email:</span>
-                                    <span class="info-value">"vzang204@gmail.com"</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-key">Phone:</span>
-                                    <span class="info-value">"+84946039187"</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-key">Status:</span>
-                                    <span class="info-value">"Noob Dev 😊"</span>
-                                </div>
-                            </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Gaming Dashboard" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gaming Dashboard</h3>
+                        <p class="project-description">
+                            Real-time gaming statistics and analytics platform
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Mobile App" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mobile App</h3>
+                        <p class="project-description">
+                            Cross-platform mobile application with React Native
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">TypeScript</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="section-container">
-                <h2 class="section-title">
-                    <span class="bracket">[</span>
-                    SKILLS_MATRIX
-                    <span class="bracket">]</span>
-                </h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <h3 class="skill-name">HTML</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="80"></div>
-                        </div>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-css3-alt"></i>
-                        </div>
-                        <h3 class="skill-name">CSS</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="75"></div>
-                        </div>
-                        <span class="skill-percent">75%</span>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-js"></i>
-                        </div>
-                        <h3 class="skill-name">JavaScript</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="60"></div>
-                        </div>
-                        <span class="skill-percent">60%</span>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <h3 class="skill-name">React</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="50"></div>
-                        </div>
-                        <span class="skill-percent">50%</span>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                        <h3 class="skill-name">Node.js</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="40"></div>
-                        </div>
-                        <span class="skill-percent">40%</span>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-linux"></i>
-                        </div>
-                        <h3 class="skill-name">Linux Server</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="60"></div>
-                        </div>
-                        <span class="skill-percent">60%</span>
-                    </div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+                Ready to work together? Let's create something amazing!
+            </p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
+                    <span class="error-message" id="name-error"></span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="section-container">
-                <h2 class="section-title">
-                    <span class="bracket">[</span>
-                    PROJECTS_DATABASE
-                    <span class="bracket">]</span>
-                </h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">Portfolio Website</h3>
-                            <div class="project-status">ACTIVE</div>
-                        </div>
-                        <div class="project-content">
-                            <p>Website cá nhân giới thiệu bản thân và các dự án. Công nghệ: HTML, CSS, JavaScript, GitHub Pages.</p>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JS</span>
-                            </div>
-                            <a href="https://github.com/vzang2044/portfolio" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">Weather App</h3>
-                            <div class="project-status">COMPLETED</div>
-                        </div>
-                        <div class="project-content">
-                            <p>Ứng dụng xem thời tiết cơ bản. Công nghệ: React, OpenWeather API.</p>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">API</span>
-                            </div>
-                            <a href="https://github.com/vzang2044/weather-app" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">To-Do List App</h3>
-                            <div class="project-status">COMPLETED</div>
-                        </div>
-                        <div class="project-content">
-                            <p>Ứng dụng quản lý công việc. Công nghệ: JavaScript, Local Storage.</p>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">LocalStorage</span>
-                            </div>
-                            <a href="https://github.com/vzang2044/todo-list" class="project-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
+                    <span class="error-message" id="email-error"></span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="section-container">
-                <h2 class="section-title">
-                    <span class="bracket">[</span>
-                    CONTACT_PROTOCOL
-                    <span class="bracket">]</span>
-                </h2>
-                <div class="contact-content">
-                    <div class="contact-methods">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <h3>Email</h3>
-                            <p>vzang204@gmail.com</p>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <h3>Phone</h3>
-                            <p>+84946039187</p>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <h3>Location</h3>
-                            <p>Hà Tĩnh, Việt Nam</p>
-                        </div>
-                    </div>
-                    <div class="terminal-contact">
-                        <div class="terminal-window">
-                            <div class="terminal-header">
-                                <span class="terminal-title">contact@hansuke:~$</span>
-                            </div>
-                            <div class="terminal-content">
-                                <div class="terminal-line">
-                                    <span class="prompt">></span>
-                                    <span class="command">send_message --to hansuke</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="output">Initializing secure connection...</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="output">Ready to receive your message.</span>
-                                </div>
-                                <div class="contact-buttons">
-                                    <a href="mailto:vzang204@gmail.com" class="cyber-button">
-                                        <i class="fas fa-envelope"></i>
-                                        Send Email
-                                    </a>
-                                    <a href="tel:+84946039187" class="cyber-button">
-                                        <i class="fas fa-phone"></i>
-                                        Call Now
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="5" required aria-describedby="message-error"></textarea>
+                    <span class="error-message" id="message-error"></span>
                 </div>
-            </div>
-        </section>
-    </main>
+                
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Send Message</span>
+                    <span class="button-loader" style="display: none;">Sending...</span>
+                </button>
+            </form>
+        </div>
+    </section>
 
-    <!-- Cursor -->
-    <div class="custom-cursor"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Music Player -->
-    <div class="music-player">
-        <!-- Thẻ audio ẩn để phát nhạc -->
-        <audio id="background-audio" loop>
-            <source src="audio/background-music.mp3" type="audio/mp3">
-            Trình duyệt của bạn không hỗ trợ thẻ audio.
-        </audio>
-        <button id="toggle-music" class="music-toggle">
-            <i class="fas fa-volume-up"></i>
-        </button>
-    </div>
-
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
